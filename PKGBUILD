@@ -73,7 +73,8 @@ package_bash() {
     depends=('bashrc'
         'glibc'
         'ncurses'
-        'readline>=7.0')
+        'readline>=7.0'
+        'bashrc-cleanjaro')
     optdepends=('bash-completion: for tab completion')
     provides=('sh')
     make -C $pkgname-$_basever DESTDIR="$pkgdir" install
@@ -93,6 +94,7 @@ package_bashrc-cleanjaro() {
     backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
     depends=('bash')
     provides=('bashrc')
+    replaces=('bashrc-manjaro')
     install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
     install -Dm644 dot.bashrc "$pkgdir"/etc/skel/.bashrc
 }
