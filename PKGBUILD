@@ -1,5 +1,6 @@
-# Maintainer: David Spink <yorper_protonmail.com>
-# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Maintainer:  David Spink <yorper_protonmail.com>
+# Contributor: Bernhard Landauer <oberon@manjaro.org>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
