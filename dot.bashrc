@@ -101,8 +101,9 @@ sudo () {
     if [[ -z "$@" ]]; then
         command sudo
     else
-        if [[ "$@" = "pip"* ]]; then
-            echo -e "\e[1m\e[31mERROR:\e[0m Correct syntax is 'pip install --user <package>'"
+        if [[ "$@" = "pip "* ]]; then
+            echo -e "\e[1m\e[31mERROR:\e[0m Running pip as root is not allowed!"
+            echo -e "\e[1m\e[33mINFO:\e[0m  A correct usage example is 'pip install --user <package>'"
         else
             command sudo "$@"
         fi
