@@ -21,7 +21,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
     'system.bashrc'
     'system.bash_logout')
 md5sums=('2b44b47b905be16f45709648f671820b'
-         '1316e5f4979bb9dc53662f1c8709c074'
+         'd79993186d59c9fffab128eb888c9fcb'
          '2902e0fee7a9168f3a4fd2ccd60ff047'
          '42f4400ed2314bd7519c020d0187edc5'
          'd8f3f334e72c0e30032eae1a1229aef1'
