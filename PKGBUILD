@@ -21,7 +21,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
     'system.bashrc'
     'system.bash_logout')
 md5sums=('2b44b47b905be16f45709648f671820b'
-         'd79993186d59c9fffab128eb888c9fcb'
+         '1316e5f4979bb9dc53662f1c8709c074'
          '2902e0fee7a9168f3a4fd2ccd60ff047'
          '42f4400ed2314bd7519c020d0187edc5'
          'd8f3f334e72c0e30032eae1a1229aef1'
@@ -34,7 +34,9 @@ md5sums=('2b44b47b905be16f45709648f671820b'
          '4a8ee95adb72c3aba03d9e8c9f96ece6'
          '411560d81fde2dc5b17b83c3f3b58c6f'
          'dd7cf7a784d1838822cad8d419315991'
-         'c1b3e937cd6dccbb7fd772f32812a0da')
+         'c1b3e937cd6dccbb7fd772f32812a0da'
+         '19b41e73b03602d0e261c471b53e670c'
+         '414339330a3634137081a97f2c8615a8')
 
 if [[ $((10#${_patchlevel})) -gt 0 ]]; then
     for (( _p=1; _p<=$((10#${_patchlevel})); _p++ )); do
