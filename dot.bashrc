@@ -97,6 +97,18 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
 
+sudo () {
+    if [[ -z "$@" ]]; then
+        command sudo
+    else
+        if [[ "$@" = "pip"* ]]; then
+            echo -e "\e[1m\e[31mERROR:\e[0m Correct syntax is 'pip install --user <package>'"
+        else
+            command sudo "$@"
+        fi
+    fi
+}
+
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
