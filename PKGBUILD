@@ -7,7 +7,7 @@
 pkgbase=bash
 pkgname=('bash' 'bashrc-cleanjaro')
 _basever=5.0
-_patchlevel=009
+_patchlevel=011
 pkgver=${_basever}.${_patchlevel}
 pkgrel=1
 arch=('x86_64')
