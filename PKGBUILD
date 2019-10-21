@@ -5,18 +5,17 @@
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgbase=bash
-pkgname=('bash' 'bashrc-cleanjaro' 'bashrc-cleanjaro-kde')
+pkgname=('bash' 'bashrc-cleanjaro')
 _basever=5.0
 _patchlevel=011
 pkgver=${_basever}.${_patchlevel}
-pkgrel=3
+pkgrel=3.2
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
 groups=('base')
 source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
     'dot.bashrc'
-    'dot.bashrc-kde'
     'dot.bash_profile'
     'dot.bash_logout'
     'system.bashrc'
@@ -102,17 +101,5 @@ package_bashrc-cleanjaro() {
     conflicts=('bashrc-cleanjaro-kde')
     install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
     install -Dm644 dot.bashrc "$pkgdir"/etc/skel/.bashrc
-}
-
-package_bashrc-cleanjaro-kde() {
-    pkgdesc="Cleanjaro's default bashrc for KDE"
-    arch=('any')
-    backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
-    depends=('bash')
-    provides=('bashrc')
-    replaces=('bashrc-manjaro')
-    conflicts=('bashrc-cleanjaro')
-    install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
-    install -Dm644 dot.bashrc-kde "$pkgdir"/etc/skel/.bashrc
 }
 
