@@ -22,7 +22,6 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
     'system.bash_logout')
 sha256sums=('b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d'
             '652f260daba250a2932163612cab17247aa31104debb27942202dce0d60186c9'
-            'c9af8c04336700b5e32ea48c71af603c1165d0a0c3ab2c30baa507977a3f54ff'
             'e149407c2bee17779caec70a7edd3d0000d172e7e4347429b80cb4d55bcec9c2'
             '4330edf340394d0dae50afb04ac2a621f106fe67fb634ec81c4bfb98be2a1eb5'
             '5fdc20c44bc9058f728d11111327f4dbb5598fec4d948dd5265211598667f9f0'
