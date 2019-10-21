@@ -5,38 +5,40 @@
 # Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgbase=bash
-pkgname=('bash' 'bashrc-cleanjaro')
+pkgname=('bash' 'bashrc-cleanjaro' 'bashrc-cleanjaro-kde')
 _basever=5.0
 _patchlevel=011
 pkgver=${_basever}.${_patchlevel}
-pkgrel=1.2
+pkgrel=2
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
 groups=('base')
 source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
     'dot.bashrc'
+    'dot.bashrc-kde'
     'dot.bash_profile'
     'dot.bash_logout'
     'system.bashrc'
     'system.bash_logout')
-md5sums=('2b44b47b905be16f45709648f671820b'
-         'ebd5c0d3d3540300110f6a2a1eb61256'
-         '2902e0fee7a9168f3a4fd2ccd60ff047'
-         '42f4400ed2314bd7519c020d0187edc5'
-         'd8f3f334e72c0e30032eae1a1229aef1'
-         '472f536d7c9e8250dc4568ec4cfaf294'
-         'b026862ab596a5883bb4f0d1077a3819'
-         '2f4a7787365790ae57f36b311701ea7e'
-         'af7f2dd93fd5429fb5e9a642ff74f87d'
-         'b60545b273bfa4e00a760f2c648bed9c'
-         '875a0bedf48b74e453e3997c84b5d8a4'
-         '4a8ee95adb72c3aba03d9e8c9f96ece6'
-         '411560d81fde2dc5b17b83c3f3b58c6f'
-         'dd7cf7a784d1838822cad8d419315991'
-         'c1b3e937cd6dccbb7fd772f32812a0da'
-         '19b41e73b03602d0e261c471b53e670c'
-         '414339330a3634137081a97f2c8615a8')
+sha256sums=('b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d'
+            '652f260daba250a2932163612cab17247aa31104debb27942202dce0d60186c9'
+            'c9af8c04336700b5e32ea48c71af603c1165d0a0c3ab2c30baa507977a3f54ff'
+            'e149407c2bee17779caec70a7edd3d0000d172e7e4347429b80cb4d55bcec9c2'
+            '4330edf340394d0dae50afb04ac2a621f106fe67fb634ec81c4bfb98be2a1eb5'
+            '5fdc20c44bc9058f728d11111327f4dbb5598fec4d948dd5265211598667f9f0'
+            '025bccfb374a3edce0ff8154d990689f30976b78f7a932dc9a6fcef81821811e'
+            'f2fe9e1f0faddf14ab9bfa88d450a75e5d028fedafad23b88716bd657c737289'
+            '87e87d3542e598799adb3e7e01c8165bc743e136a400ed0de015845f7ff68707'
+            '4eebcdc37b13793a232c5f2f498a5fcbf7da0ecb3da2059391c096db620ec85b'
+            '14447ad832add8ecfafdce5384badd933697b559c4688d6b9e3d36ff36c62f08'
+            '5bf54dd9bd2c211d2bfb34a49e2c741f2ed5e338767e9ce9f4d41254bf9f8276'
+            'd68529a6ff201b6ff5915318ab12fc16b8a0ebb77fda3308303fcc1e13398420'
+            '17b41e7ee3673d8887dd25992417a398677533ab8827938aa41fad70df19af9b'
+            'eec64588622a82a5029b2776e218a75a3640bef4953f09d6ee1f4199670ad7e3'
+            'ed3ca21767303fc3de93934aa524c2e920787c506b601cc40a4897d4b094d903'
+            'd6fbc325f0b5dc54ddbe8ee43020bced8bd589ddffea59d128db14b2e52a8a11'
+            '2c4de332b91eaf797abbbd6c79709690b5cbd48b12e8dfe748096dbd7bf474ea')
 
 if [[ $((10#${_patchlevel})) -gt 0 ]]; then
     for (( _p=1; _p<=$((10#${_patchlevel})); _p++ )); do
@@ -76,8 +78,7 @@ package_bash() {
     depends=('bashrc'
         'glibc'
         'ncurses'
-        'readline>=7.0'
-        'bashrc-cleanjaro')
+        'readline>=7.0')
     optdepends=('bash-completion: for tab completion')
     provides=('sh')
     make -C $pkgname-$_basever DESTDIR="$pkgdir" install
@@ -97,7 +98,19 @@ package_bashrc-cleanjaro() {
     backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
     depends=('bash')
     provides=('bashrc')
-    replaces=('bashrc-manjaro')
+    replaces=('bashrc-manjaro' 'bashrc-cleanjaro-kde')
     install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
     install -Dm644 dot.bashrc "$pkgdir"/etc/skel/.bashrc
 }
+
+package_bashrc-cleanjaro-kde() {
+    pkgdesc="Cleanjaro's default bashrc for KDE"
+    arch=('any')
+    backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
+    depends=('bash')
+    provides=('bashrc')
+    replaces=('bashrc-manjaro' 'bashrc-cleanjaro')
+    install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
+    install -Dm644 dot.bashrc-kde "$pkgdir"/etc/skel/.bashrc
+}
+
