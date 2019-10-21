@@ -76,7 +76,8 @@ package_bash() {
     depends=('bashrc'
         'glibc'
         'ncurses'
-        'readline>=7.0')
+        'readline>=7.0'
+        'bashrc-cleanjaro')
     optdepends=('bash-completion: for tab completion')
     provides=('sh')
     make -C $pkgname-$_basever DESTDIR="$pkgdir" install
