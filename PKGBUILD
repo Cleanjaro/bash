@@ -9,7 +9,7 @@ pkgname=('bash' 'bashrc-cleanjaro' 'bashrc-cleanjaro-kde')
 _basever=5.0
 _patchlevel=011
 pkgver=${_basever}.${_patchlevel}
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
@@ -98,7 +98,8 @@ package_bashrc-cleanjaro() {
     backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
     depends=('bash')
     provides=('bashrc')
-    replaces=('bashrc-manjaro' 'bashrc-cleanjaro-kde')
+    replaces=('bashrc-manjaro')
+    conflicts=('bashrc-cleanjaro-kde')
     install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
     install -Dm644 dot.bashrc "$pkgdir"/etc/skel/.bashrc
 }
@@ -109,7 +110,8 @@ package_bashrc-cleanjaro-kde() {
     backup=('etc/bash.bashrc' 'etc/skel/.bashrc')
     depends=('bash')
     provides=('bashrc')
-    replaces=('bashrc-manjaro' 'bashrc-cleanjaro')
+    replaces=('bashrc-manjaro')
+    conflicts=('bashrc-cleanjaro')
     install -Dm644 system.bashrc "$pkgdir"/etc/bash.bashrc
     install -Dm644 dot.bashrc-kde "$pkgdir"/etc/skel/.bashrc
 }
