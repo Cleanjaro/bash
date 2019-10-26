@@ -14,7 +14,7 @@ arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
 groups=('base')
-source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz
+source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
     'dot.bashrc'
     'dot.bash_profile'
     'dot.bash_logout'
@@ -37,10 +37,12 @@ sha256sums=('b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d'
             'ed3ca21767303fc3de93934aa524c2e920787c506b601cc40a4897d4b094d903'
             'd6fbc325f0b5dc54ddbe8ee43020bced8bd589ddffea59d128db14b2e52a8a11'
             '2c4de332b91eaf797abbbd6c79709690b5cbd48b12e8dfe748096dbd7bf474ea')
+            
+validpgpkeys=('7C0135FB088AAF6C66C650B9BB5869F064EA74AB') # Chet Ramey
 
 if [[ $((10#${_patchlevel})) -gt 0 ]]; then
     for (( _p=1; _p<=$((10#${_patchlevel})); _p++ )); do
-    source=(${source[@]} https://ftp.gnu.org/gnu/bash/bash-$_basever-patches/bash${_basever//.}-$(printf "%03d" $_p))
+    source=(${source[@]} https://ftp.gnu.org/gnu/bash/bash-$_basever-patches/bash${_basever//.}-$(printf "%03d" $_p){,.sig})
     done
 fi
 
