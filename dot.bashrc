@@ -95,7 +95,6 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
 
 sudo () {
     if [[ -z "$@" ]]; then
