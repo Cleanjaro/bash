@@ -13,7 +13,6 @@ pkgrel=4
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
-groups=('base')
 source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
     'dot.bashrc'
     'dot.bash_profile'
