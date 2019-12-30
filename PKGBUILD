@@ -9,7 +9,7 @@ pkgname=('bash' 'bashrc-cleanjaro')
 _basever=5.0
 _patchlevel=011
 pkgver=${_basever}.${_patchlevel}
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
@@ -21,7 +21,7 @@ source=(https://ftp.gnu.org/gnu/bash/bash-$_basever.tar.gz{,.sig}
     'system.bash_logout')
 sha256sums=('b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d'
             'SKIP'
-            '652f260daba250a2932163612cab17247aa31104debb27942202dce0d60186c9'
+            'b8b6fc5a617e1c0ee5e91e9f35e3d6d2ea81d09ec060bef2bc4b86c91a2794e9'
             'e149407c2bee17779caec70a7edd3d0000d172e7e4347429b80cb4d55bcec9c2'
             '4330edf340394d0dae50afb04ac2a621f106fe67fb634ec81c4bfb98be2a1eb5'
             '5fdc20c44bc9058f728d11111327f4dbb5598fec4d948dd5265211598667f9f0'

@@ -151,3 +151,5 @@ ex ()
   fi
 }
 
+HISTCONTROL=ignoreboth
+
