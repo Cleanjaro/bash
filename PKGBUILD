@@ -7,9 +7,9 @@
 pkgbase=bash
 pkgname=('bash' 'bashrc-cleanjaro')
 _basever=5.0
-_patchlevel=011
+_patchlevel=016
 pkgver=${_basever}.${_patchlevel}
-pkgrel=5
+pkgrel=1
 arch=('x86_64')
 license=('GPL')
 url='http://www.gnu.org/software/bash/bash.html'
@@ -47,6 +47,16 @@ sha256sums=('b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d'
             'd6fbc325f0b5dc54ddbe8ee43020bced8bd589ddffea59d128db14b2e52a8a11'
             'SKIP'
             '2c4de332b91eaf797abbbd6c79709690b5cbd48b12e8dfe748096dbd7bf474ea'
+            'SKIP'
+            '2943ee19688018296f2a04dbfe30b7138b889700efa8ff1c0524af271e0ee233'
+            'SKIP'
+            'f5d7178d8da30799e01b83a0802018d913d6aa972dd2ddad3b927f3f3eb7099a'
+            'SKIP'
+            '5d6eee6514ee6e22a87bba8d22be0a8621a0ae119246f1c5a9a35db1f72af589'
+            'SKIP'
+            'a517df2dda93b26d5cbf00effefea93e3a4ccd6652f152f4109170544ebfa05e'
+            'SKIP'
+            'ffd1d7a54a99fa7f5b1825e4f7e95d8c8876bc2ca151f150e751d429c650b06d'
             'SKIP')
             
 validpgpkeys=('7C0135FB088AAF6C66C650B9BB5869F064EA74AB') # Chet Ramey
